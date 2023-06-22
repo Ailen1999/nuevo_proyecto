@@ -1,0 +1,22 @@
+.containerNav{
+        background-color: aqua;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        padding: 0.5rem;
+}
+
+.logo{
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+}
+
+.lista{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    gap: 1rem;
+}
