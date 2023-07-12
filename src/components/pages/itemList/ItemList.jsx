@@ -1,8 +1,14 @@
-const ItemList = ({ saludo }) => {
+import ProductCard from "../../common/productCard/productCard";
+const ItemList = ({items}) => {
+  console.log("items: ", items)
+  
   return (
-    <div>
-      <h2>{saludo}</h2>
-    </div>
+      <div>
+        {items.map((products) => {
+          return <ProductCard key={products.id} products= {products} />
+          ;
+        })}
+      </div>
   );
 };
 
