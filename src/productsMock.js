@@ -6,7 +6,7 @@ export let products = [{
     stock: 20,
     description: "Delineador para ojos negros",
     category: "maquillaje", 
-    img:"img/delineador_pink21.png"
+    img:"../img/delineador_pink21.png"
 },
 {
 
@@ -16,7 +16,7 @@ export let products = [{
     stock: 5,
     description: "Labial en barra red",
     category: "maquillaje",
-    img:"img/labial_mac.png"
+    img:"../img/labial_mac.png"
 },
 {
 
@@ -26,7 +26,7 @@ export let products = [{
     stock: 15,
     description: "Sombras para ojos",
     category: "maquillaje",
-    img:"img/paleta_sombras.png"
+    img:"../img/paleta_sombras.png"
 },
 {
 
@@ -35,8 +35,8 @@ export let products = [{
     price: 600,
     stock: 30,
     description: "Mascara saca puntos negros",
-    category: "Facial",
-    img:"img/mascara_puntos.png"
+    category: "facial",
+    img:"../img/mascara_puntos.png"
 },
 {
 
@@ -45,8 +45,8 @@ export let products = [{
     price: 800,
     stock: 20,
     description: "Mascara antioxidante",
-    category: "Facial",
-    img:"img/mascara_detox.png"
+    category: "facial",
+    img:"../img/mascara_detox.png"
 },
 {
 
@@ -56,7 +56,7 @@ export let products = [{
     stock: 31,
     description: "Mascara hidratante libre de parabenos",
     category: "facial",
-    img:"img/mascara_acf.png"
+    img:"../img/mascara_acf.png"
 },
 {
 
@@ -66,7 +66,7 @@ export let products = [{
     stock: 30,
     description: "Brillo para el cuerpo y rostro",
     category: "glitter",
-    img:"img/polvo_hadas.png"
+    img:"../img/polvo_hadas.png"
 },
 {
 
@@ -76,7 +76,7 @@ export let products = [{
     stock: 10,
     description: "Brillo para ojos",
     category: "glitter",
-    img:"img/strass_ojos.png"
+    img:"../img/strass_ojos.png"
 },
 {
 
@@ -86,6 +86,6 @@ export let products = [{
     stock: 14,
     description: "Brillo para el cuerpo, pelo y rostro",
     category: "glitter",
-    img:"img/glitter_gel.png"
+    img:"../img/glitter_gel.png"
 },
 ];

@@ -6,79 +6,27 @@
 
   const ItemListContainer = () => {
       const [items, setItems] = useState([]);
-      const [error,setError] = useState ({});
+      const [error, setError] = useState ({});
 
-const {seccion} = useParams ()
-console.log("seccion:", seccion)
+const {categoryName} = useParams ()
 
       useEffect(() => {
-        let productsFiltrados = products.filter (products.category ==="seccion")
+        let productsFiltrados = products.filter (
+          (products) => products.category === categoryName
+        );
+
         const tarea = new Promise((resolve, reject) => {
-          resolve(seccion === undefined ? products: productsFiltrados);
-          reject ({message: "Direccion no encontrada", status: 404})
+          resolve(categoryName === undefined ? products: productsFiltrados);
         });
 
         tarea
           .then((respuesta) => setItems(respuesta))
           .catch((error) => console.log(error));
-      }, [seccion]);
+      }, [categoryName]);
 
-      console.log(items)
       
     return <ItemList items={items}/>;
   };
 
   export default ItemListContainer;   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState, useEffect } from "react";
-// import { products } from "../../../productsMock";
-// import itemList from "./ItemList";
-
-// const ItemlistContainer = () => {
-//   const [items, serItems] = useState([]);
-//   const [error, setError] = useState([]);
-
-//   useEffect(() => {
-//     const tarea = new Promise((resolve, reject) => {
-//       resolve(products);
-//     })
-
-//       .then((respuesta) => setItems(respuesta))
-//       .catch((error) => setError(error));
-//   }, []);
-
-//   return <Itemlist items={items} />;
-// };
-
-// export default ItemlistContainer;

@@ -14,7 +14,7 @@ const restar = () => {
 }
 
   return (
-    <Counter contador={contador} sumar={sumar} restar={restart} onAdd={onAdd} />
+    <Counter contador={contador} sumar={sumar} restar={restar} onAdd={onAdd} />
   )
 }
 
