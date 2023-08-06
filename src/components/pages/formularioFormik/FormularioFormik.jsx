@@ -12,7 +12,7 @@ const FormularioFormik = () => {
       repetPassword: "",
     },
     onSubmit: (data) => {
-      console.log(data);
+  
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -33,7 +33,7 @@ const FormularioFormik = () => {
     }),
     validateOnChange: false,
   });
-  console.log(errors);
+
 
   return (
     <div style={{ padding: "40px" }}>

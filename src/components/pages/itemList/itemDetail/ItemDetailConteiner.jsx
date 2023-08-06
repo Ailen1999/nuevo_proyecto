@@ -14,11 +14,11 @@ const ItemDetailConteiner = () => {
 
   const { id } = useParams();
   const totalQuantity = getQuantityById(id);
-  console.log(totalQuantity);
+
 
   useEffect(() => {
     let productsCollection = collection(db, "datos");
-    console.log(productsCollection);
+
     let productRef = doc(productsCollection, id);
     getDoc(productRef).then((res) => {
       setProducto({ ...res.data(), id: res.id });

@@ -1,6 +1,6 @@
 import ProductCard from "../../common/productCard/productCard";
 const ItemList = ({ items }) => {
-  console.log("items: ", items);
+ 
 
   return (
     <div>
