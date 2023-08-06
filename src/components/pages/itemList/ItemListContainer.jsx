@@ -1,32 +1,38 @@
-  import { products } from "../../../productsMock";
-  import ItemList from "./Itemlist"
-  import { useState, useEffect } from "react";
-  import "./itemList.css"
-  import { useParams } from "react-router-dom";
+import ItemList from "./Itemlist";
+import { useState, useEffect } from "react";
+import "./itemList.css";
+import { useParams } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
-  const ItemListContainer = () => {
-      const [items, setItems] = useState([]);
-      const [error, setError] = useState ({});
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
 
-const {categoryName} = useParams ()
+  const { categoryName } = useParams();
 
-      useEffect(() => {
-        let productsFiltrados = products.filter (
-          (products) => products.category === categoryName
-        );
+  useEffect(() => {
+    let productsCollection = collection(db, "datos");
+    let consultaFiltrada;
+    if (categoryName) {
+      consultaFiltrada = query(productsCollection, where("category", "==", categoryName));
+    } else {
+      consultaFiltrada = productsCollection
+    }
 
-        const tarea = new Promise((resolve, reject) => {
-          resolve(categoryName === undefined ? products: productsFiltrados);
-        });
+    getDocs(consultaFiltrada).then((res) => {
+      let productos = res.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
 
-        tarea
-          .then((respuesta) => setItems(respuesta))
-          .catch((error) => console.log(error));
-      }, [categoryName]);
+      setItems(productos)
+    });
 
-      
-    return <ItemList items={items}/>;
-  };
+  }, [categoryName]);
 
-  export default ItemListContainer;   
+  return (
+    <div>
+      <ItemList items={items} />
+    </div>
+  );};
 
+export default ItemListContainer;

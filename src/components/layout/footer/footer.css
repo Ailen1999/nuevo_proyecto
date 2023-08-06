@@ -1,0 +1,11 @@
+.footer{
+    background-color:cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer .contacto{
+    display: flex;
+    flex-direction: column;
+}

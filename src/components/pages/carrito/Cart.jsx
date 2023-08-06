@@ -1,9 +1,21 @@
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+import { Badge } from "@mui/material";
+import { pink } from "@mui/material/colors";
 
-function Cart() {
+const CartWidget = () => {
+  const {cart} = useContext(CartContext)
   return (
-    <h1>Carrit</h1>
-  )
-}
+    <Link to="/cart">
+      <Badge badgeContent={4} color="primary"></Badge>
 
-export default Cart
+      <Badge badgeContent={cart.length} showZero color="primary">
+        <ShoppingCartIcon sx={{ color: pink[500] }} />
+      </Badge>
+    </Link>
+  );
+};
+export default CartWidget;

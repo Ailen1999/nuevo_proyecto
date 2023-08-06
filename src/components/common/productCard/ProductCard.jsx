@@ -8,18 +8,15 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-
-
 const productCard = ({ products }) => {
   return (
-    <div className="cards">
       <div>
         <div>
-          <Card>
+          <Card style={{width:"350px", height:"500px"}}>
             <CardMedia
               component="img"
               alt=""
-              height="140"
+              height="350"
               image={products.img}
             />
             <CardContent>
@@ -34,13 +31,11 @@ const productCard = ({ products }) => {
               <Link to={`/ItemDetail/${products.id}`}>
                 <Button size="small">Detalle</Button>
               </Link>
-
-              {/* <Button size="small">Comprar</Button> */}
             </CardActions>
           </Card>
         </div>
       </div>
-    </div>
+    
   );
 };
 
